@@ -5,10 +5,10 @@ module ApplicationHelper
   end
 
   def errors
-    "<% if flash %>
-      <% flash.each do |key, value| %>
-        <p> <%= key %>: <%= value %> </p>
-      <% end %>
-    <% end %>".html_safe
+    if flash
+      flash.each do |key, value|
+        "<p> #{key}: #{value}</p>".html_safe
+      end
+    end
   end
 end
